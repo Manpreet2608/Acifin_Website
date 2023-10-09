@@ -13,9 +13,7 @@ body {
     font-family: 'Filson Soft';
 }
 .main_merch_sec {
-    display: flex;
     max-width: 100%;
-    flex-flow: column wrap; 
 }
 .container {
     width: 90%;
@@ -65,23 +63,6 @@ body {
     letter-spacing: 3.57px;
     font-weight: 900;
     font-family: 'Filson Soft';
-}
-.mobile_product_scroll_container {
-    display: flex;
-    width: 100%;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 50px;
-}
-.mobile_product_scroll_container img {
-    object-fit: contain;
-    max-width: 100%;
-}
-.mobile_product_scroll_container .line {
-    border-bottom: 1px solid #8E41D8;
-    width: 82%;
-    margin-bottom: 20px;
 }
 .main_merch_sec .merch_poster_sec {
     width: 100%;
@@ -187,6 +168,39 @@ body {
     letter-spacing: 8.32px;
     font-weight: 900;
 }
+.main_merch_sec .product_scrollBar {
+    max-width: 100%;
+    padding: 50px 0px;
+}
+.product_scrollBar .container .scrollBar_line {
+    border-bottom: 1px solid #8E41D8;
+    margin: 20px;
+}
+.main_merch_sec .read_more_sec {
+    max-width: 100%;
+    padding: 100px 0px 130px;
+}
+.main_merch_sec .read_more_sec .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main_merch_sec .read_more_sec .container .merch_btn {
+    display: flex;
+    width: 24.5vw;
+    align-items: center;
+    justify-content: center;
+    background: #8E41D8;
+    border: 1px solid #8E41D8;
+    border-radius: 16px;
+    padding: 23px 0px;
+    color: #F5F2EE;
+    font-size: 2vw;
+    line-height: 2.5vw;
+    letter-spacing: 3.57px;
+    font-weight: 900;
+    font-family: 'Filson Soft';
+}
 .slider_wrapper {
     width: 100%;
     padding: 0px 0px 80px;
@@ -195,42 +209,42 @@ body {
     width: 93%;
     margin: 0 5vw;
 }
-.slider_wrapper .slider {
+.slider_wrapper .slider_instagram {
     display: flex;
     max-width: 100%;
 }
-.slider_wrapper .slider .slider_content {
+.slider_wrapper .slider_instagram .slider_content {
     background: #8f41d8a8;
     border-radius: 14px;
     padding: 20px;
     margin-right: 70px;
 }
-.slider_wrapper .slider .slider_content .slider_content_header {
+.slider_wrapper .slider_instagram .slider_content .slider_content_header {
     display: flex;
     max-width: 100%;
     gap: 20px;
     align-items: center;
     margin-bottom: 25px;
 }
-.slider_wrapper .slider .slider_content .slider_content_header img {
+.slider_wrapper .slider_instagram .slider_content .slider_content_header img {
     width: 3.6vw;
     padding-left: 10px;
 }
-.slider_wrapper .slider .slider_content .slider_content_header h4 {
+.slider_wrapper .slider_instagram .slider_content .slider_content_header h4 {
     color: #FFFFFF;
     font-size: 1.46vw;
     line-height: 1.8vw;
     width: 17vw;
 }
-.slider_wrapper .slider .slider_content .slider_content_main {
+.slider_wrapper .slider_instagram .slider_content .slider_content_main {
     display: flex;
     width: 100%;
     margin-bottom: 30px;
 }
-.slider_wrapper .slider .slider_content .slider_content_main img {
+.slider_wrapper .slider_instagram .slider_content .slider_content_main img {
     width: 100%;
 }
-.slider_wrapper .slider .slider_content .slider_read_more p {
+.slider_wrapper .slider_instagram .slider_content .slider_read_more p {
     color: #fff;
     font-size: 1.3vw;
     line-height: 1.5vw;
@@ -261,6 +275,33 @@ body {
     font-weight: 900;
     font-family: 'Filson Soft';
 }
+/* Product Slider CSS */
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+   }
+	100% {
+		transform: translateX(calc(-100% * 7));
+   }
+}
+.slider {
+    background: transparent;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.slider .slide-track {
+	animation: scroll 40s linear infinite;
+	display: flex;
+	width: 100%;
+}
+.slider .slide {
+	height: 100%;
+	width: 100%;
+}
+
 /* Media Query */
 @media screen and (max-width: 1800px) {
     .main_merch_sec .container .merch_container .merch_intro_sec .merch_btn {
@@ -285,7 +326,7 @@ body {
         font-size: 20px;
         line-height: 30px;
     }
-    .slider_wrapper .slider .slider_content .slider_content_header h4 {
+    .slider_wrapper .slider_instagram .slider_content .slider_content_header h4 {
         font-size: 1.4vw;
         width: 15vw;
     }
@@ -295,7 +336,7 @@ body {
         font-size: 17px;
         line-height: 27px;
     }
-    .slider_wrapper .slider .slider_content .slider_content_header h4 {
+    .slider_wrapper .slider_instagram .slider_content .slider_content_header h4 {
         font-size: 1vw;
         line-height: 1.4vw;
         width: 13.4vw;
@@ -316,6 +357,11 @@ body {
     }
     .main_merch_sec .read_more_sec .container .merch_btn {
         width: 28vw;
+    }
+    .slider_wrapper .slider_instagram .slider_content .slider_content_header h4 {
+        font-size: 2vw;
+        line-height: 2.4vw;
+        width: 25.4vw;
     }
 }
 @media screen and (max-width: 767px) {
@@ -347,7 +393,7 @@ body {
     .slider_wrapper {
         padding: 50px 0px 80px;
     }
-    .slider_wrapper .slider .slider_content .slider_content_header h4 {
+    .slider_wrapper .slider_instagram .slider_content .slider_content_header h4 {
         font-size: 2vw;
         line-height: 2.4vw;
         width: 21.4vw;
@@ -369,16 +415,16 @@ body {
     }
 }
 @media screen and (max-width: 580px) {
-    .slider_wrapper .slider .slider_content .slider_content_header img {
+    .slider_wrapper .slider_instagram .slider_content .slider_content_header img {
         width: 10vw;
         padding-left: 10px;
     }
-    .slider_wrapper .slider .slider_content .slider_content_header h4 {
+    .slider_wrapper .slider_instagram .slider_content .slider_content_header h4 {
         font-size: 5vw;
         line-height: 5.4vw;
         width: 57vw;
     }
-    .slider_wrapper .slider .slider_content .slider_read_more p {
+    .slider_wrapper .slider_instagram .slider_content .slider_read_more p {
         font-size: 4vw;
         line-height: 4.5vw;
     }
@@ -391,16 +437,16 @@ body {
         padding: 10px 0px;
         margin-top: 30px;
     }
-    .slider_wrapper .slider .slider_content .slider_content_header img {
+    .slider_wrapper .slider_instagram .slider_content .slider_content_header img {
         width: 12vw;
         padding-left: 10px;
     }
-    .slider_wrapper .slider .slider_content .slider_content_header h4 {
+    .slider_wrapper .slider_instagram .slider_content .slider_content_header h4 {
         font-size: 4vw;
         line-height: 4.4vw;
         width: 46.4vw;
     }
-    .slider_wrapper .slider .slider_content .slider_read_more p {
+    .slider_wrapper .slider_instagram .slider_content .slider_read_more p {
         font-size: 4vw;
         line-height: 4.5vw;
     }
@@ -425,6 +471,9 @@ body {
     .main_merch_sec .container .merch_container .merch_intro_sec .merch_btn {
         font-size: 11px;
         line-height: 21px;
+    }
+    .slider .slide img {
+        width: 200px;
     }
 }
 @media screen and (max-width: 375px) {
